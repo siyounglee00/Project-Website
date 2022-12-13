@@ -225,8 +225,8 @@
               <li><code>upload_date</code> - In our time series analysis, we often filter our Youtube videos by year to get the videos associated with the proper time frame. </li>
             </ul>
             <p style="text-align: left;">
-              Within our data analysis pipeline, we have several data-generating code blocks that take the yt_metadata_en.jsonl.gz JSON files and extract the information needed to run our analysis. 
-              For more information on the preprocessing, please check out our  <a href="https://siyounglee00.github.io/Project-Website/#links" target="_blank">links section</a> which contains Jupyter notebooks that are annotated for the readability, usability, and reproducibility of our results.
+              Within our data analysis pipeline, we have several data-generating code blocks that take the <code>yt_metadata_en.jsonl.gz</code> JSON files and extract the information needed to run our analysis. 
+              For more information on the preprocessing, please check out our  <a href="https://siyounglee00.github.io/Project-Website/#links" target="_blank">links section</a> which contains <code>Jupyter notebooks</code> that are annotated for the readability, usability, and reproducibility of our results.
             </p>
           
           </p>
@@ -242,22 +242,26 @@
           <h2>N-grams</h2>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">
-          </div>
-          <div class="col-lg-6">
-            <img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">
-          </div>
-        </div>
-
         <div class="section-title" style="margin-top: 2em;">
           <p style="text-align: left;">
-            Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
-            The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
-            As we can se from the figures there was especially many Elon quotes from the year 2018.
-            This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
-            It is this data that we will use in our further analysis of Elon's impact on the financial markets.
+            Our primary task at hand is working with the textual data that is made available from the <code>title</code> and <code>description</code>  of each Youtube video from our metadata. 
+            These features give us an idea of what the youtube videos are about and help us contextualize specific subjects relating to the video. 
+            One of the most common and simplest methods in natural language processing when working with a massive corpora (collection of written texts) are N-grams. 
+            <br></br>
+
+            In <em>N</em>-gram analysis, we select a number <em>N</em> which will take <em>N</em> sequential words and form a new corpora of all the possible <em>N</em>-long word pairings.
+            Take a look at the pseudocode below which covers a very basic example: 
+            
+            <ul style="list-style-type:square">
+              <li> <code># if <em>N</em>=2 </code></li>
+              <li><code>sentence = “I was happy”</code></li>
+              <li><strong><code>corpus = [I_was, was_happy])</code></strong></li>
+            </ul>
+            
+            You can then count the frequency that these word pairings have formed to assess trends across our text data. 
+            So in summary at a high level, we are breaking down large portions of our corpora data into more meaningful segments (<em>N</em>-gram) that help to identify the root cause behind what we will call “trends”. 
+            
+
           </p>
         </div>
 
