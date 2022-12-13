@@ -185,30 +185,8 @@
     <!-- ======= Quotebank Section ======= -->
     <section id="data" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>What is YouNiverse?</h2>
-          <p style="text-align: left;">
-            In our project we leveraged the YouNiverse dataset, which is a large collection of channel and video metadata from English-language YouTube. 
-            This dataset comprises metadata from over 136k channels and 72.9M videos published between May 2005 and October 2019, as well as channel-level time-series data with weekly subscriber and view counts. 
-            In addition, this dataset gets information from the online service Social Blade, where it obtains channel rankings that allow us to assess and enhance the representativeness of the sample of channels. 
-            YouNiverse, is publicly available at and is primarily distributed to empower the community to do research with and about YouTube.
-          </p>
-        </div>
-
-        <div>
-          <h2>Meaningful data from Quotebank</h2>
-          <p style="text-align: left;">
-            We were presented with a number of different zipped files containing all of the quotes in quotebank from the year 
-            2015 to the beginning of 2020.
-            After downloading all the zipped datafolders from Quotebank we started the process of chunking the data from the 
-            different years into multiple files in order to save time when loading in the data.
-            After finishing the chunking we extracted all the quotes where Elon Musk was set as the speaker. 
-            Then we could combine all the data sets from the different years into one single file: "all-Elon Musk-quotes.csv.bz2".
-            Out of these quotes we removed the quotes where the probability of Elon being the speaker was less than a certain threshold. 
-            Finally we used Spacy, a Natural Language Processing tool, to extract the quotes where Elon Musk mentioned an organization.
-          </p>
-        </div>
 
         <div class="row">
           <div class="col-lg-1"></div>
@@ -218,7 +196,6 @@
         </div>
       </div>
     </section><!-- End Quotebank Section -->
-
     <!-- ======= Facts Section ======= -->
     <section id="data" class="facts">
       <div class="container" data-aos="fade-up">
@@ -254,6 +231,27 @@
             </div>
           </div>
 
+        </div>
+          <p style="text-align: left;">
+            In our project we leveraged the YouNiverse dataset, which is a large collection of channel and video metadata from English-language YouTube. 
+            This dataset comprises metadata from over 136k channels and 72.9M videos published between May 2005 and October 2019, as well as channel-level time-series data with weekly subscriber and view counts. 
+            In addition, this dataset gets information from the online service Social Blade, where it obtains channel rankings that allow us to assess and enhance the representativeness of the sample of channels. 
+            YouNiverse, is publicly available at and is primarily distributed to empower the community to do research with and about YouTube.
+          </p>
+        </div>
+
+        <div>
+          <h2>Meaningful data from Quotebank</h2>
+          <p style="text-align: left;">
+            We were presented with a number of different zipped files containing all of the quotes in quotebank from the year 
+            2015 to the beginning of 2020.
+            After downloading all the zipped datafolders from Quotebank we started the process of chunking the data from the 
+            different years into multiple files in order to save time when loading in the data.
+            After finishing the chunking we extracted all the quotes where Elon Musk was set as the speaker. 
+            Then we could combine all the data sets from the different years into one single file: "all-Elon Musk-quotes.csv.bz2".
+            Out of these quotes we removed the quotes where the probability of Elon being the speaker was less than a certain threshold. 
+            Finally we used Spacy, a Natural Language Processing tool, to extract the quotes where Elon Musk mentioned an organization.
+          </p>
         </div>
 
       </div>
