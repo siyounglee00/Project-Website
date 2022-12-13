@@ -114,9 +114,9 @@
 
               Therefore, we take our initial global usage data and extract the Youtube usage by country. 
               This forms a more interesting plot because we can see how dominant the platform has become in various countries relative to their population. 
-              Youtube Creators have noticed this reach and have exploited it for the better and for the worse. 
-              For example, Donald Trump’s advertisement team pumped out numerous Youtube advertisements and videos towards the opposing democratic party during his 2016 presidential campaign knowing that nearly 75% of Americans utilized Youtube routinely. 
-              So with information sourced from <a href="https://www.demandsage.com/youtube-stats/" target="_blank">Demands Age</a>, we plot the top 15 countries who have the highest Youtube usage along with its relative population.
+              Youtube Creators have noticed this incredible reach and have exploited it for the better and for the worse. 
+              For example, Donald Trump’s advertisement team pumped out numerous Youtube advertisements and videos during his 2016 presidential campaign knowing that nearly 75% of Americans utilized Youtube routinely. 
+              So with information sourced from <a href="https://www.demandsage.com/youtube-stats/" target="_blank">Demands Age</a>, we take a look at the top 15 countries who have the highest Youtube usage along with its relative population.
               <br></br>
             </p>
 
@@ -128,8 +128,8 @@
             </div>
 
             <p style="text-align: left;">
-              While these two introductory histograms are telling of Youtube's surgance throughout the years, it remains difficult to map what type of information users access from this web service. 
-              However instead of focusing on what we don’t know, our project directs your attention to what we do know: 
+              While these two introductory histograms are telling of Youtube's surge throughout the years, it remains difficult to map what type of information users access from this web service. 
+              However instead of focusing on what we do not know, our project directs your attention to what we do know; 
               which are the “momentous” events/trends that occur within our daily lives that help develop our growing human history (e.g. Fortnite, Ebola Epidemic, Tik Tok, etc.).   
               Therefore, our project aim is trying to determine whether <strong>Youtube is a reflection of our Society</strong>. 
               To obtain a proper answer we will prioritize the two following methodologies to conduct our analysis from our Youtube dataset:
@@ -144,7 +144,7 @@
                 <h3>Textual Analysis</h3>
                 In our Youtube data, we will be working with a dense amount of textual data. 
                 Therefore we will first conduct an N-gram analysis which will help us highlight meaningful words and word pairings to identify “trends” or word(s) that appear frequently across videos.
-                After doing so we will also run the Latent Dirichlet Allocation (LDA) which is a machine learning generative algorithm which will cluster our words and give prevalence to specific words based on their grouping.
+                After doing so we will also run the Latent Dirichlet Allocation (LDA) which is a machine learning generative algorithm which will group our words and give prevalence to specific words based on their grouping.
               </div>
             </div>
 
@@ -281,7 +281,7 @@
 
             So in our project after removing all stopwords (English and custom stopwords), URLs, emojis, and punctuation, we formed new unigram, bigram, and trigram corpora. 
             We then take advantage of the <code>wordcloud</code> python framework which allows us to plot the most popular <em>N</em>-grams determined by size and its boldness. 
-            Below you will see <code>gifs</code> of our politics & news-specific word clouds. 
+            Below you will see <code>gifs</code> of our <code>Politics & News</code>-specific word clouds. 
             
           </p>
         </div>
@@ -342,30 +342,68 @@
           <div class="container" data-aos="fade-up">
     
             <div class="section-title">
-              <h2>Word Relevance through Latent dirichlet allocation (LDA)</h2>
+              <h2>Word Relevance through Latent Dirichlet allocation (LDA)</h2>
             </div>
-    
-            <div class="row">
-              <div class="col-lg-6">
-                <img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">
-              </div>
-              <div class="col-lg-6">
-                <img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">
+
+            <div class="row" style="margin-top: -1em;">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10">
+                <img src="./img/lda.png" class="img-fluid" alt="">
               </div>
             </div>
     
             <div class="section-title" style="margin-top: 2em;">
               <p style="text-align: left;">
-                Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
-                The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
-                As we can se from the figures there was especially many Elon quotes from the year 2018.
-                This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
-                It is this data that we will use in our further analysis of Elon's impact on the financial markets.
+                In the next major component of our analysis, we take on a more sophisticated method from natural language processing known as Latent Dirichlet Allocation (LDA). 
+                LDA is a generative statistical model that explains a set of observations (in our case a dictionary of words) and produces a distribution of groupings over the items being clustered. 
+                So while it sounds very much like a clustering algorithm, we can think of the algorithm as assigning a probability that a word belongs to a topic vs. a word belonging to a cluster. 
+                And while the use case for this method is typically for topic modeling, we are going to leverage this algorithm to group together popular keywords and provide an adjustable relevance score to particular words within a topic. 
+                Before we discuss our LDA model, we would first like to discuss the algorithm in greater detail in the context of our problem.
               </p>
             </div>
-    
           </div>
         </section><!-- End Most Mentioned Section -->
+
+            <!-- ======= Impact regression Section ======= -->
+    <section id="futureWork" class="about smallerWidthDisplay">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>LDA Algorithm</h2>
+          <p style="text-align: left;">
+            <ol type="1">
+              <li>Generate a dictionary of words from all the Youtube videos and a list of words with their frequency counts. </li>
+              <li>Go through each document (Youtube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 15 because there are 15 Youtube categories within our dataset.
+              </li>
+              <li>Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:
+                <ol>
+                  <li><strong>p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random Youtube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
+                    /li>
+                  <li><strong>p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
+                    Similarly, if the word <code>“Fauci”</code> is not probable to be in the topic <code>Music</code>, the probability assigned to <code>“Fauci”</code> will be low because the rest of the words in the document will belong to some other topic and hence the document will have a higher probability for those topics. </li>
+                </ol>
+              </li>
+           </ol>
+
+           After computing the probabilities of each word we arrive at our completed LDA model. 
+           Computationally, we were able to achieve this by using the <code>gensim</code> framework which prepared our documents and fed them into the LDA model to be trained. 
+           Once training was completed we took advantage of the <code>LDAvis</code> Python framework which provides us with an interactive plot of our topics and relevant words associated with each topic. 
+           However, for the sake of time and our sanity, we would like to note that the LDA model was trained on a random sample of 1,000,000 Youtube videos. 
+           Since the training was done on our local machines, our memory is what determines its time complexity and with 8GB of RAM, we did the best we could. 
+           Below you can interact with our latent Dirichlet allocation model.
+          </p>
+
+          <div class="youtube usage">
+            <div id="map1" class="map_containers">
+              <!-- Title above map -->
+              <object type="text/html" data="./img/lda.html" align="left" width=1000></object>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End Impact regression Section -->
 
     <!-- ======= Sentiment Analysis Section ======= -->
     <section id="timeseries" class="about smallerWidthDisplay">
