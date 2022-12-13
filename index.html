@@ -163,10 +163,10 @@
 
         </div>
         <p style="text-align: left;">
-          In our project we leveraged the YouNiverse dataset, which is a large collection of channel and video metadata from English-language YouTube. 
-          This dataset comprises metadata from over 136k channels and 72.9M videos published between May 2005 and October 2019, as well as channel-level time-series data with weekly subscriber and view counts. 
-          In addition, this dataset gets information from the online service Social Blade, where it obtains channel rankings that allow us to assess and enhance the representativeness of the sample of channels. 
-          YouNiverse, is publicly available at and is primarily distributed to empower the community to do research with and about YouTube.
+          In our project, we leveraged the YouNiverse dataset, which is a large collection of the channel and video metadata from English-language YouTube. 
+          This dataset comprises metadata from over 136k channels and 72.9M videos published between May 2005 and October 2019 as well as channel-level time-series data with weekly subscriber and view counts. 
+          Within this dataset, we also get information from the online service <a href="https://socialblade.com/" target="_blank">Social Blade</a>, which allows users to assess and enhance the representativeness of the sample of channels in order to rank channels accordingly. 
+          YouNiverse is publicly available and more information can be found at this <a href="https://zenodo.org/record/4650046#.Y5jcgOzMIpw" target="_blank">link</a>.
         </p>
       </div>
     </section><!-- End Quotebank Section -->
@@ -213,14 +213,22 @@
         <div>
           <h2>Meaningful data from YouNiverse</h2>
           <p style="text-align: left;">
-            We were presented with a number of different zipped files containing all of the quotes in quotebank from the year 
-            2015 to the beginning of 2020.
-            After downloading all the zipped datafolders from Quotebank we started the process of chunking the data from the 
-            different years into multiple files in order to save time when loading in the data.
-            After finishing the chunking we extracted all the quotes where Elon Musk was set as the speaker. 
-            Then we could combine all the data sets from the different years into one single file: "all-Elon Musk-quotes.csv.bz2".
-            Out of these quotes we removed the quotes where the probability of Elon being the speaker was less than a certain threshold. 
-            Finally we used Spacy, a Natural Language Processing tool, to extract the quotes where Elon Musk mentioned an organization.
+            Amongst the Youniverse dataset, the most critical component of our analysis lies within the Youtube metadata. 
+            In this metadata lies a lucrative amount of features but the ones of interest for our analysis are the <code>categories, description, title </code>& <code>upload_date</code>. 
+            We briefly describe each of their value to our analysis pipeline:
+          </p>
+            
+            <ul style="list-style-type:square">
+              <li><code>categories</code> - In our analysis, the categories feature allows us to look at specific video categories to filter out our data.</li>
+              <li><code>description</code> - the description feature gives us the meat of our text data which describes our video.</li>
+              <li><code>title</code> - The title feature is also critical to our analysis as titles are what attract users to click on videos.</li>
+              <li><code>upload_date</code> - In our time series analysis, we often filter our Youtube videos by year to get the videos associated with the proper time frame. </li>
+            </ul>
+            <p style="text-align: left;">
+              Within our data analysis pipeline, we have several data-generating code blocks that take the yt_metadata_en.jsonl.gz JSON files and extract the information needed to run our analysis. 
+              For more information on the preprocessing, please check out our  <a href="https://siyounglee00.github.io/Project-Website/#links" target="_blank">links section</a> which contains Jupyter notebooks that are annotated for the readability, usability, and reproducibility of our results.
+            </p>
+          
           </p>
         </div>
     </section><!-- End Quotebank Section -->
