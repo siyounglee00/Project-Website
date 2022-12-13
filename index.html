@@ -197,6 +197,7 @@
         </p>
       </div>
     </section><!-- End Quotebank Section -->
+
     <!-- ======= Facts Section ======= -->
     <section id="data" class="facts">
       <div class="container" data-aos="fade-up">
@@ -228,7 +229,7 @@
             <div class="count-box">
               <i class="bx bx-data"></i>
               <span data-purecounter-start="0" data-purecounter-end="111.8" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Memory Size of Dataset (GB)</p>
+              <p>Memory Size of Compressed Dataset (GB)</p>
             </div>
           </div>
       </div>
@@ -237,7 +238,7 @@
     <section id="data2" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
         <div>
-          <h2>Meaningful data from Quotebank</h2>
+          <h2>Meaningful data from YouNiverse</h2>
           <p style="text-align: left;">
             We were presented with a number of different zipped files containing all of the quotes in quotebank from the year 
             2015 to the beginning of 2020.
@@ -251,8 +252,39 @@
         </div>
     </section><!-- End Quotebank Section -->
 
-    <!-- ======= Quotes Example Section ======= -->
-    <section id="testimonials" class="testimonials section-bg smallerWidthDisplay">
+
+    <!-- ======= Most Mentioned Section Section ======= -->
+    <section id="ngrams" class="about smallerWidthDisplay">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>N-grams</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">
+          </div>
+          <div class="col-lg-6">
+            <img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 2em;">
+          <p style="text-align: left;">
+            Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
+            The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
+            As we can se from the figures there was especially many Elon quotes from the year 2018.
+            This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
+            It is this data that we will use in our further analysis of Elon's impact on the financial markets.
+          </p>
+        </div>
+
+      </div>
+    </section><!-- End Most Mentioned Section -->
+
+     <!-- ======= Quotes Example Section ======= -->
+     <section id="testimonials" class="testimonials section-bg smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
         <div class="subTitle subTitleOfSection">
@@ -299,59 +331,42 @@
       </div>
     </section><!-- End Quotes Example Section -->
 
-    <!-- ======= Most Mentioned Section Section ======= -->
-    <section id="nlp" class="about smallerWidthDisplay">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>THE PUBLIC LISTED COMPANIES MOST MENTIONED BY ELON</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="normalText" style="font-size: calc(2208px/25);"><b>TESLA</b></p>
-            <p class="normalText" style="font-size: calc(94px/2);"><b>APPLE</b></p>
-            <p class="normalText" style="font-size: calc(64px/2);"><b>TWITTER</b></p>
-            <p class="normalText" style="font-size: calc(62px/2);"><b>FORD</b></p>
-            <p class="normalText" style="font-size: calc(20px/1.5);"><b>PAYPAL</b></p>
+        <!-- ======= Most Mentioned Section Section ======= -->
+        <section id="ngrams2" class="about smallerWidthDisplay">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="section-title">
+              <h2>Word Relevance through Latent dirichlet allocation (LDA)</h2>
+            </div>
+    
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">
+              </div>
+              <div class="col-lg-6">
+                <img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">
+              </div>
+            </div>
+    
+            <div class="section-title" style="margin-top: 2em;">
+              <p style="text-align: left;">
+                Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
+                The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
+                As we can se from the figures there was especially many Elon quotes from the year 2018.
+                This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
+                It is this data that we will use in our further analysis of Elon's impact on the financial markets.
+              </p>
+            </div>
+    
           </div>
-          <div class="col-lg-6">
-            <img src="assets/img/top10plc.svg" class="img-fluid img_display" alt="">
-          </div>
-        </div>
-
-        <div class="subTitle">
-          <h2>Some more data about Elon's quotes</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">
-          </div>
-          <div class="col-lg-6">
-            <img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">
-          </div>
-        </div>
-
-        <div class="section-title" style="margin-top: 2em;">
-          <p style="text-align: left;">
-            Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
-            The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
-            As we can se from the figures there was especially many Elon quotes from the year 2018.
-            This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
-            It is this data that we will use in our further analysis of Elon's impact on the financial markets.
-          </p>
-        </div>
-
-      </div>
-    </section><!-- End Most Mentioned Section -->
+        </section><!-- End Most Mentioned Section -->
 
     <!-- ======= Sentiment Analysis Section ======= -->
-    <section id="sentimentAnalysis" class="about smallerWidthDisplay">
+    <section id="timeseries" class="about smallerWidthDisplay">
       <div class="container testimonials" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Sentiment analysis</h2>
+          <h2>Time Series Analysis</h2>
           <p style="text-align: left;">
             Sentiment analysis is a text analysis method that detects polarity (e.g. a positive or negative opinion) within the text. 
             We did a Sentiment analysis on Elon's quotes using VADER, a model used for text sentiment analysis that is sensitive 
@@ -460,11 +475,11 @@
     </section><!-- End Sentiment Analysis Section -->
 
     <!-- ======= Observational study Section ======= -->
-    <section id="observationalStudy" class="about smallerWidthDisplay">
+    <section id="discussion" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Observational study</h2>
+          <h2>Discussion</h2>
         </div>
 
         <div>
