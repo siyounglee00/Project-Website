@@ -1,0 +1,71 @@
+.smallerWidthDisplay {
+    width: 70%;
+    margin: auto;
+}
+
+.normalText {
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.img_display {
+    width: 100%;
+}
+
+.subTitle {
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+}
+
+.subTitle h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.subTitleOfSection {
+    margin-top: -2.5em;
+    margin-bottom: 0em;
+}
+
+table, td, th {  
+    font-size: 12px;
+    border: 1px solid #000;
+    text-align: left;
+}
+
+th {
+    background: #0563bb;
+    color: #fff;
+}
+
+table {
+    margin: auto;
+    margin-top: 1em;
+    border-collapse: collapse;
+    width: 80%;
+   
+}
+
+th, td {
+    padding: 10px;
+}
+
+#base {
+    background-color: #55eaff;
+}
+
+.imgMadagascar {
+    position: absolute;
+    margin-top: 5em;
+    right: 2em;
+    width: 10%;
+}
+
+.imgMadagascar img {
+    width: 100%;
+}
+
+#tab {
+    margin-left: 3em;
+}
