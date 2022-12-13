@@ -1055,3 +1055,12 @@ section {
   margin-right: auto;
   width: 50%;
 }
+
+div.container_left {
+  text-align: center;
+}
+
+ul.myUL_left {
+  display: inline-block;
+  text-align: left;
+}
