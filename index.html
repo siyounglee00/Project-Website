@@ -257,12 +257,18 @@
             <ul style="list-style-type:square">
               <li> <code># if <em>N</em>=2 </code></li>
               <li><code>sentence = “I was happy”</code></li>
-              <li><strong><code>corpus = [I_was, was_happy])</code></strong></li>
+              <li><strong><code>corpus = [I_was, was_happy]</code></strong></li>
             </ul>
 
           <p style="text-align: left;"></p>
             You can then count the frequency that these word pairings have formed to assess trends across our text data. 
-            So in summary at a high level, we are breaking down large portions of our corpora data into more meaningful segments (<em>N</em>-gram) that help to identify the root cause behind what we will call “trends”.          
+            So in summary at a high level, we are breaking down large portions of our corpora data into more meaningful segments (<em>N</em>-gram) that help to identify the root cause behind what we will call “trends”. 
+            <br></br>
+
+            So in our project after removing all stopwords (English and custom stopwords), URLs, emojis, and punctuation, we formed new unigram, bigram, and trigram corpora. 
+            We then take advantage of the <code>wordcloud</code> python framework which allows us to plot the most popular <em>N</em>-grams determined by size and its boldness. 
+            Below you will see <code>gifs</code> of our politics & news-specific word clouds. 
+            
           </p>
         </div>
 
@@ -274,7 +280,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="subTitle subTitleOfSection">
-          <h2>Some of Elon's quotes</h2>
+          <h2>Youtube Titles and Descriptions of videos containing the word <strong>police</strong></h2>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
