@@ -255,13 +255,15 @@
     <section id="data2" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
         <div>
-          <h2>Meaningful data from YouNiverse</h2>
+          <div class="section-title">
+            <h2>Meaningful data from YouNiverse</h2>
+          </div>
+          
           <p style="text-align: left;">
             Amongst the Youniverse dataset, the most critical component of our analysis lies within the YouTube metadata. 
             In this metadata lies a lucrative amount of features, but the ones of interest for our analysis are the <code>categories, description, title </code>& <code>upload_date</code>. 
             We briefly describe each of their value in our analysis pipeline:
 
-          </p>
             
             <ul style="list-style-type:square">
               <li><code>categories</code> - In our analysis, the categories feature allows us to look at specific video categories to filter out our data.</li>
@@ -269,7 +271,8 @@
               <li><code>title</code> - The title feature is also critical to our analysis as titles are what attract users to click on videos.</li>
               <li><code>upload_date</code> - In our time series analysis, we often filter our YouTube videos by year to get the videos associated with the proper time frame. </li>
             </ul>
-            
+          </p>
+
           <p style="text-align: left;">
             Within our data analysis pipeline, we have several data-generating code blocks that take the <code>yt_metadata_en.jsonl.gz</code> JSON files and extract the information needed to run our analysis. 
             For more information on the preprocessing, please check out our  <a href=#links" target="_blank">links section</a> which contains <code>Jupyter notebooks</code> that are annotated for the readability, usability, and reproducibility of our results.
