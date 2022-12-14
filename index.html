@@ -435,7 +435,7 @@
               </p>
             </div>
           </div>
-        </section><!-- End Most Mentioned Section -->
+        </section>
 
             <!-- ======= Impact regression Section ======= -->
     <section id="futureWork" class="about smallerWidthDisplay">
@@ -477,7 +477,7 @@
         </div>
 
       </div>
-    </section><!-- End Impact regression Section -->
+    </section><!-- LDA Section -->
 
       <div class="youtube usage">
         <div id="map1" class="map_containers">
@@ -488,7 +488,7 @@
 
     
 
-    <!-- ======= Sentiment Analysis Section ======= -->
+    <!-- ======= Timeseries Analysis Section ======= -->
     <section id="timeseries" class="about smallerWidthDisplay">
       <div class="container testimonials" data-aos="fade-up">
 
@@ -599,9 +599,9 @@
         </div>
 
       </div>
-    </section><!-- End Sentiment Analysis Section -->
+    </section><!-- End Timeseries Analysis Section -->
 
-    <!-- ======= Observational study Section ======= -->
+    <!-- ======= Discussion Section ======= -->
     <section id="discussion" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
@@ -860,56 +860,9 @@
         </div>
 
       </div>
-    </section><!-- End Observational study Section -->
+    </section><!-- End Discussion  Section -->
 
-    <!-- ======= Impact regression Section ======= -->
-    <section id="impactRegression" class="about smallerWidthDisplay">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Impact regression</h2>
-          <p style="text-align: left;">
-            The aim of this part is to perform a linear regression on the change of stock to . Indeed, a simple linear regression was 
-            calculated to describe the change of stock at a given day based on the market cap, the money volume, whether or not 
-            Elon Musk has talked about the company, and especially the sentiment analysis of the quote.  
-            We want to investigate the degree to which the variable sentiment score predicts the change of stock price.
-            <br><br>
-
-            To do so, we continue to use the data frame of the observational study but we need to make some modifications. 
-            In the beginning, we add a column of sentiment score for each quote, and for the companies not quoted we set the 
-            score to 0. Afterward, we noticed that there are many quotes on the same day, some of them are different quotes and 
-            some of them are the same as the first one. In this case, we add all the different quotes that occur on the same day. 
-            Therefore, on the same day, it can happen that there are different rows of the same company with different sentiment 
-            scores.
-            <br><br>
-
-            We also add a column that describes the change of the stock: we take the mean of the change of the stock during 
-            the three days following the day of the quote.
-            <br><br>
-
-            Now that all the data is gathered the linear regression can be performed:
-          </p>
-
-          <br><br>
-          
-          <div class="col-lg-12">
-            <img src="assets/img/linReg.png" class="img-fluid" alt="">
-          </div>
-
-          <p style="text-align: left;">
-            <br><br>
-            Where x1, x2, x3,x4, x5 represent respectively the MarketCap, Popularity, Money Volume, sentiment analysis score of 
-            the quote, and whether Elon talked about the company. The method used here is Ordinary Least Squares (OLS). 
-            As you can see the estimation of the coefficients of the sentiment score and the Elon variable are very 
-            low. The coefficients represent the rate of change of the stock price with respect to the variables. 
-            This means Elon quotes still don't have an impact on the change of stock price, even when we expanded the model. 
-          </p>
-
-        </div>
-      </div>
-    </section><!-- End Impact regression Section -->
-
-    <!-- ======= Impact regression Section ======= -->
+    <!-- =======Conclusion Section ======= -->
     <section id="conclusion" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
@@ -925,9 +878,9 @@
         </div>
 
       </div>
-    </section><!-- End Impact regression Section -->
+    </section><!-- End Conclusion Section -->
 
-    <!-- ======= Impact regression Section ======= -->
+    <!-- ======= Future Work Section ======= -->
     <section id="futureWork" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
@@ -961,7 +914,7 @@
         </div>
 
       </div>
-    </section><!-- End Impact regression Section -->
+    </section><!-- End Future work Section -->
 
     <!-- Team Section -->
     <section id="links" class="pt-20 pb-48">
@@ -991,7 +944,7 @@
                 </p>
                 <!-- Social Media Buttons -->
                 <div class="mt-6">
-                  <button class="bg-blue-600 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                  <button class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
                     type="button" onclick="window.location.href='https://github.com/Simonlee711';">
                     <!-- Icon -->
                     <i class="fab fa-github-square"></i>
@@ -1044,11 +997,6 @@
                     type="button" onclick="window.location.href='https://github.com/siyounglee00';">
                     <!-- Icon -->
                     <i class="fab fa-github-square"></i>
-                  </button>
-                  <button class="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                    type="button">
-                    <!-- Icon -->
-                    <i class="fab fa-instagram"></i>
                   </button>
                 </div>
               </div>
