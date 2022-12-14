@@ -1066,6 +1066,10 @@ ul.myUL_left {
   text-align: left;
 }
 
+ul.myUL_left_2 {
+  text-align: center;
+}
+
 .parent_simon{
 
   display: grid;
