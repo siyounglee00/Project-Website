@@ -296,14 +296,14 @@
 
           <p style="text-align: left;">
             You can then count the frequency that these word pairings have formed to assess trends across our text data. 
-            So in summary at a high level, we are breaking down large portions of our corpora data into more meaningful segments (<em>N</em>-gram) that help to identify the root cause behind what we will call “trends”. 
+            So in summary at a high level, we are breaking down large portions of our corpora data into more meaningful segments (<em>N</em>-gram) that help to identify the root cause behind what we call “trends”. 
             <br></br>
 
             So in our project, we took a particular emphasis on working with the <code>Politics & News</code> YouTube category. 
             Because textual data is often quite noisy, and a lot of preprocessing is required, we thought it would make sense to focus on one particular YouTube category. 
             So in our analysis, we cleaned up our 2005-2019 <code>Politics & News</code> related videos by removing all stop words (English and custom stop words), URLs, emojis, and punctuation. 
             We then formed unigram, bigram, and trigram corpora. 
-            Once these steps were completed, we took advantage of the word cloud python framework which allows us to plot the most popular N-grams determined by their size and their boldness. 
+            Once these steps were completed, we took advantage of the <code>word cloud</code> python framework which allows us to plot the most popular <em>N</em>-grams determined by their size and their boldness. 
             Below, you will see <code>GIFs</code> of our <code>Politics & News</code>-specific word clouds. 
 
             <div class="youtube usage">
@@ -342,11 +342,12 @@
             2016 was a big year in the <code>Politics & News</code> world because of the contentious presidential election between Donald Trump & Hillary Clinton. 
             Involving third parties like Russia and others, we expected that our <em>N</em>-grams would put a particular emphasis on these events. 
             Interestingly enough, we found that the unigram was not very informative of the political landscape from that year. 
-            The trigrams were also uninformed, so we did not picture them in this analysis. 
+            The trigrams were also uninformative, so we did not picture them in this analysis. 
             While we expected words like <code>“trump”</code> and <code>“clinton”</code> to be dominant within our unigrams, we see that words with little relevance like <code>“watch”</code>, <code>“latest”</code>, and <code>“world”</code> were considered the trendiest words. 
             This is just one of the many challenges of working with textual data but also highlights the inability of unigrams to capture trends.
+            <br></br>
 
-            While the unigram (& trigram) analysis was rather uninformative, we can see that the bigrams were able to capture more simply by changing this hyperparameter <em>N</em>. 
+            While the unigram (& trigram) analysis was rather uninformative, we can see that the bigrams were able to capture more, simply by changing this hyperparameter <em>N</em> to 2. 
             Words like <code>“donald_trump”</code> and <code>“hilary_clinton”</code> did make a bigger appearance across all YouTube videos from this year, and we think it's a better demonstration of this political year. 
             In addition, something interesting we found was India’s YouTube presence that starts to become frequent, especially in recent years. 
             And this is correlating to our first plots describing YouTube’s usage by country. 
@@ -410,7 +411,7 @@
           <div class="container" data-aos="fade-up">
     
             <div class="section-title">
-              <h2>Word Relevance through Latent Dirichlet allocation (LDA)</h2>
+              <h2>Word Relevance through Latent Dirichlet Allocation (LDA)</h2>
             </div>
     
             <div class="section-title" style="margin-top: 2em;">
@@ -418,7 +419,7 @@
                 In the next major component of our analysis, we take on a more sophisticated method from natural language processing known as Latent Dirichlet Allocation (LDA). 
                 LDA is a generative statistical model that explains a set of observations (in our case, a dictionary of words) and produces a distribution of groupings over the items being clustered. 
                 So while it sounds very much like a clustering algorithm, we can think of the algorithm as assigning a probability that a word belongs to a topic vs. a word belonging to a cluster. 
-                And while the use case for this method is typically for topic modeling, we are going to leverage this algorithm to group together popular keywords and provide an adjustable relevance score to particular words within a topic. 
+                And while the use case for this method is typically for topic modeling, we are going to leverage this algorithm to group together salient (most noticeable or important) keywords and provide an adjustable relevance score to particular words within a topic. 
                 Before we discuss our LDA model, we would first like to discuss the algorithm in greater detail in the context of our problem.
               </p>
             </div>
@@ -441,8 +442,8 @@
           </div>
 
             <ul class="myUL_left">
-              <li>Generate a dictionary of words from all the YouTube videos and a list of words with their frequency counts. </li>
-              <li>Go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 15 because there are 15 YouTube categories within our dataset.
+              <li>We first generate a dictionary of words from all the YouTube videos and a list of words with their frequency counts. </li>
+              <li>We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
               </li>
               <li>Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:</li>
                 <ul class="myUL_left">
@@ -455,11 +456,12 @@
            </ul>
           <p style="text-align: left;">
             After computing the probabilities of each word, we arrive at our completed LDA model. 
-            Computationally, we were able to achieve this by using the “gensim” framework, which prepared our documents and fed them into the LDA model to be trained. 
-            Once training was completed, we took advantage of the “LDAvis” Python framework, which provides us with an interactive plot of our topics and relevant words associated with each topic. 
+            Computationally, we were able to achieve this by using the <code>gensim</code> framework, which prepared our documents and fed them into the Latent Dirichlet Allocation model to be trained. 
+            Once training was completed, we took advantage of the <code>LDAvis</code> Python framework, which provides us with an interactive plot of our topics and relevant/salient words associated with each topic. 
             However, for the sake of time and our sanity, we would like to note that the LDA model was trained on a random sample of 1,000,000 YouTube videos. 
-            Since the training was done on our local machines, our memory is what determines its time complexity and with 8 GB of RAM, we did the best we could. 
-            Below, you can interact with our latent Dirichlet allocation model.
+            Since the training was done on our local machines, our memory (RAM) plays a significant role in its time complexity and with just 8 GB of RAM, we did the best we could. 
+            (<em>Note that although 1,000,000 videos feels like a small sample size, the dictionary built from a corpora of 1,000,000 videos can be possibly exponentially larger.</em>)
+            Below, you can interact with our latent Dirichlet Allocation model.
           </p>
         </div>
 
