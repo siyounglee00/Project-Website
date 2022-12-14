@@ -1069,8 +1069,9 @@ ul.myUL_left {
 .parent_simon{
 
   display: grid;
+  text-align: center;
   
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   
   column-gap: 5px;
   
