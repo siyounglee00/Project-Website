@@ -1065,3 +1065,13 @@ div.container_left {
 ul.myUL_left {
   text-align: left;
 }
+
+.parent_simon{
+
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr;
+  
+  column-gap: 5px;
+  
+  }
