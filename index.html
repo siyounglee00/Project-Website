@@ -459,20 +459,19 @@
             </div>
           </div>
 
-          <div>
-            <ul>
-              <li>We first generate a dictionary of words from all the YouTube videos and a list of words with their frequency counts. </li>
-              <li>We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
-              </li>
-              <li>Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:</li>
-                <ul>
-                  <li><strong>p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random YouTube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
-                  </li>
-                  <li><strong>p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
-                    Similarly, if the word <code>“Fauci”</code> is not probable to be in the topic <code>Music</code>, the probability assigned to <code>“Fauci”</code> will be low because the rest of the words in the document will belong to some other topic and hence the document will have a higher probability for those topics. </li>
-                </ul>
-            </ul>
-          </div>
+          <ul>
+            <li>We first generate a dictionary of words from all the YouTube videos and a list of words with their frequency counts. </li>
+            <li>We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
+            </li>
+            <li>Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:</li>
+              <ul>
+                <li><strong>p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random YouTube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
+                </li>
+                <li><strong>p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
+                  Similarly, if the word <code>“Fauci”</code> is not probable to be in the topic <code>Music</code>, the probability assigned to <code>“Fauci”</code> will be low because the rest of the words in the document will belong to some other topic and hence the document will have a higher probability for those topics. </li>
+              </ul>
+          </ul>
+
           <div>
             <p style="text-align: left;">
               After computing the probabilities of each word, we arrive at our completed LDA model. 
