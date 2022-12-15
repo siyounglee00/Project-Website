@@ -265,12 +265,12 @@
             We briefly describe each of their value in our analysis pipeline:
 
             
-            <ul style="list-style-type:square">
-              <li><code>categories</code> - In our analysis, the categories feature allows us to look at specific video categories to filter out our data.</li>
-              <li><code>description</code> - the description feature gives us the meat of our text data which describes our video.</li>
-              <li><code>title</code> - The title feature is also critical to our analysis as titles are what attract users to click on videos.</li>
-              <li><code>upload_date</code> - In our time series analysis, we often filter our YouTube videos by year to get the videos associated with the proper time frame. </li>
-            </ul>
+            <div style="margin-left: 4em;">
+              * <code>categories</code> - In our analysis, the categories feature allows us to look at specific video categories to filter out our data.
+              * <code>description</code> - the description feature gives us the meat of our text data which describes our video.
+              * <code>title</code> - The title feature is also critical to our analysis as titles are what attract users to click on videos.
+              * <code>upload_date</code> - In our time series analysis, we often filter our YouTube videos by year to get the videos associated with the proper time frame. 
+            </div>
           </p>
 
           <p style="text-align: left;">
@@ -464,6 +464,7 @@
             <strong>2.</strong> We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
             <br></br>
             <strong>3.</strong> Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:
+            <br></br>
             <div style="margin-left: 4em;">
               <strong>a. p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random YouTube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
               <br></br>
