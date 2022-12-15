@@ -1073,3 +1073,7 @@ div.container_left {
   column-gap: 5px;
   
   }
+
+  mark {
+    background-color: black;
+  }
