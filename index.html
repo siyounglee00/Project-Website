@@ -338,8 +338,10 @@
           
     <section id="futureWork" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
-
-        <h2> A closer look at 2016</h2>
+        <div class="section-title">
+          <h2> A closer look at 2016</h2>
+        </div>
+        
 
         <div class="parent_simon">
           <div>   
@@ -450,9 +452,6 @@
         <div class="section-title">
           <h2>LDA Algorithm</h2>
         </div>
-          <br></br>
-          <br></br>
-
           <div class="row" style="margin-top: -1em;">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
@@ -468,7 +467,7 @@
             <div style="margin-left: 1em;">
               <strong>a. p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random YouTube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
               <br></br>
-              <li><strong>p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
+              <strong>b. p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
                 Similarly, if the word <code>“Fauci”</code> is not probable to be in the topic <code>Music</code>, the probability assigned to <code>“Fauci”</code> will be low because the rest of the words in the document will belong to some other topic and hence the document will have a higher probability for those topics. 
                 <br></br>
             </div>
