@@ -63,7 +63,7 @@
         <li><a href="#lda" class="nav-link scrollto"><i class="fa-sharp fa-solid fa-code-compare"></i> <span>Latent Dirichlet Allocation</span></a></li>
         <li><a href="#timeseries" class="nav-link scrollto"><i class="bx bx-line-chart"></i> <span>Time Series Analysis</span></a></li>
         <li><a href="#discussion" class="nav-link scrollto"><i class="fas fa-comments"></i><span>Discussion</span></a></li>
-        <li><a href="#conclusion" class="nav-link scrollto"><i class="fa-regular fa-location-question"></i> <span>Conclusion</span></a></li>
+        <li><a href="#conclusion" class="nav-link scrollto"><i class="fa-solid fa-question"></i> <span>Conclusion</span></a></li>
         <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Authors & Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -464,7 +464,7 @@
             <strong>2.</strong> We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
             <br></br>
             <strong>3.</strong> Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:
-            <div style="margin-left: 1em;">
+            <div style="margin-left: 4em;">
               <strong>a. p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random YouTube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
               <br></br>
               <strong>b. p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
