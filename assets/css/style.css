@@ -365,8 +365,8 @@ section {
 }
 .about .content ul li {
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
+  padding-left: 20px !important;
+  align-items: left;
 }
 .about .content ul strong {
   margin-right: 10px;
