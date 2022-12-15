@@ -64,7 +64,7 @@
         <li><a href="#timeseries" class="nav-link scrollto"><i class="bx bx-line-chart"></i> <span>Time Series Analysis</span></a></li>
         <li><a href="#discussion" class="nav-link scrollto"><i class="fas fa-comments"></i><span>Discussion</span></a></li>
         <li><a href="#conclusion" class="nav-link scrollto"><i class="fa-regular fa-location-question"></i> <span>Conclusion</span></a></li>
-        <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>About the Authors & Links</span></a></li>
+        <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Authors & Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 
@@ -895,28 +895,24 @@
         <div class="section-title">
           <h2>Future work</h2>
           <p style="text-align: left;">
-            There were things that we were not able to do, due to time limits as well as other reasons, such as some limitations with Quotebank. But there are still a lot of interesting things that we could have looked at. We will list some of the stuff we think that could be interesting to look at in the future.
+            While our initial analysis helped provide insight into our original question, we also see room for expansion to explore even more alleyways to provide answers to our question.
+            For example, we had some thoughts on addressing whether specific New's broadcasting channels heightened particular words when it came to controversial topics to gain higher viewership. 
+            In a similar realm, we also thought of conducting an analysis on highlighting videos with a high dislike to like ratio to see whether particular "negative" or "controversial" words appeared across videos.
+            However we decided to keep our analysis very much in one pathway with very clear intentions. 
           </p>
           <br>
           <p style="text-align: left;">
-            For the observational study, we could have added more covariates, or taken a larger set of controlled companies to have a better matching. But as noticed, the propensity scores are not very similar for the matched companies. One can think of improving the propensity score model to have a more accurate score. There is also a large data missing or not available, for example, we tried to match Tesla with Rivian for example, but like for a lot of other companies they were either private or only had too recent stock prices.
+            In terms of improving some of our methodologies from our current analysis, we thought we could do a better job at cleaning up our N-gram analysis. 
+            However due to scalability and the noisy tendencies of textual data with numerous "irrelevant" words, we decided to use more robust methods like Latent Dirachlett Allocation to overcome our mediocre results from the N-gram analysis.
+            Also within our time series data, we could continue adding more trendy/interesting topics that could reflect our question of whether Youtube is a reflection of our society?
+            However what often gets overlooked is the the filtering of this massive dataset which often is computationally expensive especially when having to load the memory heavy data into the Pandas framework, which requires us to load everything onto memory.
           </p>
 
           <br>
           <p style="text-align: left;">
-            We were not able to get historical prices for cryptocurrencies which was very unfortunate for the data story. 
-            Therefore we was not able to look at Elon's effect on cryptocurrencies.
-            We tried to use <a href="https://coinmarketcap.com/api/documentation/v1/" target="_blank">CoinMarketcap's API</a>, 
-            the most popular API for cryptocurrency, but unfortunately we needed a paid subscriptions in order to obtain the historical data. 
-            The error message stated this: <i>"Your API Key subscription plan doesn't support " 'this endpoint.'</i>
-          </p>
-          <br>
-          <p style="text-align: left;">
-            As we briefly mentioned earlier, we were unfortunately not able to look at if Musk had a bigger impact on smaller companies compared to big companies, so-called large-cap companies, due to the fact that Quotebank did not contain quotes about smaller companies.  
-          </p>
-          <br>
-          <p style="text-align: left;">
-            We also wanted to look at if Elon's impact changed over the years. However, we did not have time to look into that.
+            Ultimately as students, we were constrained by other obligations and time allotted to us, but we feel great about what we were able to accomplish from this lucrative dataset. 
+            Therefore in totality we are greatful to have conducted enough data anlysis to allow us to address our question based on some of the things covered in the ADA course. 
+            So we thank Professor Bob West and the ADA team for all the help throughout this winter semester!
           </p>
           <br>
         </div>
