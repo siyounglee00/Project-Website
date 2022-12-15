@@ -423,36 +423,35 @@
       </div>
     </section><!-- End Quotes Example Section -->
 
-        <!-- ======= LDA Section ======= -->
-        <section id="lda" class="about smallerWidthDisplay">
-          <div class="container" data-aos="fade-up">
-    
-            <div class="section-title">
-              <h2>Word Relevance through Latent Dirichlet Allocation (LDA)</h2>
-            </div>
-    
-            <div class="section-title" style="margin-top: 2em;">
-              <p style="text-align: left;">
-                In the next major component of our analysis, we take on a more sophisticated method from natural language processing known as Latent Dirichlet Allocation (LDA). 
-                LDA is a generative statistical model that explains a set of observations (in our case, a dictionary of words) and produces a distribution of groupings over the items being clustered. 
-                So while it sounds very much like a clustering algorithm, we can think of the algorithm as assigning a probability that a word belongs to a topic vs. a word belonging to a cluster. 
-                And while the use case for this method is typically for topic modeling, we are going to leverage this algorithm to group together salient (most noticeable or important) keywords and provide an adjustable relevance score to particular words within a topic. 
-                Before we discuss our LDA model, we would first like to discuss the algorithm in greater detail in the context of our problem.
-              </p>
-            </div>
-          </div>
-        </section>
+    <!-- ======= LDA Section ======= -->
+    <section id="lda" class="about smallerWidthDisplay">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Word Relevance through Latent Dirichlet Allocation (LDA)</h2>
+        </div>
+
+        <div class="section-title" style="margin-top: 2em;">
+          <p style="text-align: left;">
+            In the next major component of our analysis, we take on a more sophisticated method from natural language processing known as Latent Dirichlet Allocation (LDA). 
+            LDA is a generative statistical model that explains a set of observations (in our case, a dictionary of words) and produces a distribution of groupings over the items being clustered. 
+            So while it sounds very much like a clustering algorithm, we can think of the algorithm as assigning a probability that a word belongs to a topic vs. a word belonging to a cluster. 
+            And while the use case for this method is typically for topic modeling, we are going to leverage this algorithm to group together salient (most noticeable or important) keywords and provide an adjustable relevance score to particular words within a topic. 
+            Before we discuss our LDA model, we would first like to discuss the algorithm in greater detail in the context of our problem.
+          </p>
+        </div>
+      </div>
+    </section>
 
             <!-- ======= Impact regression Section ======= -->
     <section id="futureWork" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
-
-        
         <div class="section-title">
           <h2>LDA Algorithm</h2>
         </div>
           <br></br>
           <br></br>
+
           <div class="row" style="margin-top: -1em;">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
@@ -473,16 +472,19 @@
                     Similarly, if the word <code>“Fauci”</code> is not probable to be in the topic <code>Music</code>, the probability assigned to <code>“Fauci”</code> will be low because the rest of the words in the document will belong to some other topic and hence the document will have a higher probability for those topics. </li>
                 </ul>
             </ul>
-          <p style="text-align: left;">
-            After computing the probabilities of each word, we arrive at our completed LDA model. 
-            Computationally, we were able to achieve this by using the <code>gensim</code> framework, which prepared our documents and fed them into the Latent Dirichlet Allocation model to be trained. 
-            Once training was completed, we took advantage of the <code>LDAvis</code> Python framework, which provides us with an interactive plot of our topics and relevant/salient words associated with each topic. 
-            However, for the sake of time and our sanity, we would like to note that the LDA model was trained on a random sample of 1,000,000 YouTube videos. 
-            Since the training was done on our local machines, our memory (RAM) plays a significant role in its time complexity and with just 8 GB of RAM, we did the best we could. 
-            (<em>Note that although 1,000,000 videos feels like a small sample size, the dictionary built from a corpora of 1,000,000 videos can be possibly exponentially larger.</em>)
-            Below, you can interact with our latent Dirichlet Allocation model.
-          </p>
-        </div>
+          </div>
+          <div>
+            <p style="text-align: left;">
+              After computing the probabilities of each word, we arrive at our completed LDA model. 
+              Computationally, we were able to achieve this by using the <code>gensim</code> framework, which prepared our documents and fed them into the Latent Dirichlet Allocation model to be trained. 
+              Once training was completed, we took advantage of the <code>LDAvis</code> Python framework, which provides us with an interactive plot of our topics and relevant/salient words associated with each topic. 
+              However, for the sake of time and our sanity, we would like to note that the LDA model was trained on a random sample of 1,000,000 YouTube videos. 
+              Since the training was done on our local machines, our memory (RAM) plays a significant role in its time complexity and with just 8 GB of RAM, we did the best we could. 
+              (<em>Note that although 1,000,000 videos feels like a small sample size, the dictionary built from a corpora of 1,000,000 videos can be possibly exponentially larger.</em>)
+              Below, you can interact with our latent Dirichlet Allocation model.
+            </p>
+          </div>
+      
 
       </div>
     </section><!-- LDA Section -->
