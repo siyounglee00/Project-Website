@@ -360,7 +360,7 @@ section {
   color: #728394;
 }
 .about .content ul {
-  list-style: none;
+  list-style: square;
   padding: 0;
 }
 .about .content ul li {
@@ -1062,13 +1062,6 @@ div.container_left {
   text-align: center;
 }
 
-ul.myUL_left {
-  text-align: left;
-}
-
-ul.myUL_left_2 {
-  text-align: center;
-}
 
 .parent_simon{
 
