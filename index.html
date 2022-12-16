@@ -81,7 +81,7 @@
           <small class="ml-3">Siyoung Lee,</small>
           <small class="ml-3">Lina Bacha</small>
         </p>
-        <p style="font-size: 16px; color:#FFCE44"><mark>Team: <b>chromeGoldFish</mark></b></p>
+        <p style="font-size: 16px">Team: <b>chromeGoldFish</b></p>
 
     </div>
   </section><!-- End Hero -->
@@ -160,7 +160,7 @@
                 <img src="./img/2012_unigram.png" class="img-fluid" alt="">
               </div>
               <div style="width: 80%; text-align: left; margin-left: 2em;">
-                <h3>Textual Analysis</h3>
+                <h3><strong>Textual Analysis</strong></h3>
                 In our YouTube data, we will be working with a dense amount of textual data. 
                 Therefore, we will first conduct an N-gram analysis, which will help us highlight meaningful words and word pairings to identify “trends” or word(s) that appear frequently across videos. 
                 After doing so we will also run the Latent Dirichlet Allocation which is a statistical generative algorithm that will group our words and give prevalence and saliency to specific words based on their probability distribution.
@@ -170,7 +170,7 @@
             <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 3em;">
               
               <div style="width: 80%; text-align: right; margin-right: 2em;">
-                <h3>Time Series Analysis</h3>
+                <h3><strong>Time Series Analysi</strong></h3>
                 In the second part of our analysis, we will determine the density of specific “events” across our available time series. 
                 For example, if the COVID-19 vaccine was developed in 2020, we are curious to see if keywords like “COVID-19”, “vaccine”, or any words associated were seen across more videos during that time period. 
                 We try to pick events that are drastically different in category to get a good idea of the spread and diversity in the coverage of different historical events and their prevalence on YouTube.
@@ -464,13 +464,12 @@
             <strong>2.</strong> We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
             <br>
             <strong>3.</strong> Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:
-            <br>
+            <br></br>
             <div style="margin-left: 4em;">
               <strong>a. p(topic t | document d): Calculate the proportion of words from the document that are assigned to one of our topics. </strong> By calculating this we capture how many words belong to the topic of a given document. For example, if a lot of words from a random YouTube document (video) belong to the <code>Politics & News</code> topic, it is more probable that these words belong to the <code>Politics & News</code> topic.
               <br>
               <strong>b. p(word w| topic t): Calculate the proportion of all the assignments of a given topic over all documents that come from a specific word. This tries to capture how many documents are in topic t because of the word w. </strong> And since LDA visualizes documents as a mixture of topics, we can imply that the topics are a mixture of words. So if the word <code>“Donkey Kong”</code> has a huge probability of being in the topic <code>Video Games</code>, all the documents having this word will strongly be associated with this topic as well. 
                 Similarly, if the word <code>“Fauci”</code> is not probable to be in the topic <code>Music</code>, the probability assigned to <code>“Fauci”</code> will be low because the rest of the words in the document will belong to some other topic and hence the document will have a higher probability for those topics. 
-                <br>
                 <br></br>
             </div>
 
