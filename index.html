@@ -448,9 +448,11 @@
       <div class="container" data-aos="fade-up">
         <div>
           <h2><font size="+2">LDA Algorithm</font></h2>
-          <br></br>
-          <br></br>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
           <div class="row" style="margin-top: -1em;">
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
@@ -503,10 +505,48 @@
 
         <div>
           <p style="text-align: left;">
-            After reviewing the results of the LDA Model, we decided to provide a general "topic" look up table for each of the 15 topics.
+            After reviewing the results of the LDA Model, we see the 30 most salient terms in our sample of 1,000,000 videos. 
+            In addition to the top salient words, we decided to provide a general "topic" look up table for each of the 15 topics to clear up any ambiguity:
             <br></br>
-
           </p>
+          <p style="text-align: left;">
+            <div style="margin-left: 2em;">
+              <strong>1. Movies: </strong>We see that <code>"star", "war(s)", "film"</code> implies perhaps a movie related topic.
+              <br>
+              <strong>2. Vlog/Family: </strong>The terms <code>"guy", "baby", "home", "vlog"</code> may imply a family/vlog topic. 
+              <br>
+              <strong>3 Video Games: </strong>We see a clear indication of video games with terms like <code>"minecraft", "xbox"</code>, etc.
+              <br>
+              <strong>4. Music: </strong>YouTube has a strong prescence of music related videos and these terms indicate it being a music topic.
+              <br>
+              <strong>5. Product Reviews: </strong>Review videos are also a mass presence in YouTube. Terms like <code>"amazon", "review", "android"</code> implies a product review maybe even related to the latest tech.
+              <br>
+              <strong>6. News(?): </strong>Though not exactly clear, terms like <code>"trump", "police", "president"</code> might imply a news related topic.
+              <br>
+              <strong>7. Finance/Stocks: </strong>We see an interesting example of the LDA here. Its clear it is a finance related topic but because the video game <code>"mario"</code> collects gold coins, his probability distribution makes it into the finance topic.
+              <br>
+              <strong>8. Tutorials: </strong> <code>"makeup", "food", "guitar"</code> are clear words that imply tutorial/lesson based video topic.
+              <br>
+              <strong>9. Children(?): </strong>Once again not totally clear but the terms associated give videos relating to children.
+              <br>
+              <strong>10. Miscallaneous: </strong> We see a wide variety of topics here. This implies that the algorithm couldn't find 15 distinct topics amongst our sample of 1,000,000 videos. 
+              <br>
+              <strong>11. Miscallaneous 2: </strong> We see a mixture of video game topics (<code>"roblox", "yugioh"</code>) as well as country related terms ("gandhi", "kenya").  
+              <br>
+              <strong>12. Vehicles: </strong>Though there are some words that do not belong, terms like <code>"truck", "use(d)_cars", "ford"</code> imply a vehicle dominant topic
+              <br>
+              <strong>13. India based videos: </strong> We see a lot of terms related to India and we have seen in previous sections that India widely uses YouTube and has a massive prescence. The algorithm also suggests that a mass of videos is worthy enough to supply a distinct topic. 
+              <br>
+              <strong>14. Africa based videos: </strong> We see a strong association of terms relating to Africa in this category implying that African coverage is popular amongst videos.
+              <br>
+              <strong>15. India based videos 2: </strong>Similar to Topic 13.
+              <br>
+            </div>
+
+            So while most categories were mixed with various topics, we could also distinguish clear "categories" in the terms which had wide associations to specific subjects. 
+            Therefore through this more sophisticated LDA algorithm, we got to see what words were salient across Youtube videos.
+            While there is a chance for a poor display of words across all Youtube videos in our dataset, we believe that most of the topics that the LDA algorithm was able to generate were representative of Youtube.
+          </p>  
         </div>
 
     </section><!-- LDA Section -->
@@ -533,9 +573,9 @@
             </div>
           </p>  
         
-      </div>
+        </div>
           
-      <div>
+        <div>
           <p style="text-align: left;">
             Our Time Series Analysis results are compromised into several interactive plots, with each plot representing a chunk of data corresponding to a specific video theme (e.g.“COVID-19 Vaccine development”). 
             As a result, we first filtered our youtube video data when it included a list of keywords (e.g. “COVID-19”, “vaccine”, “Fauci” ) associated with the theme either in the description or the title of the video. 
@@ -549,7 +589,7 @@
             And, for each main category the same plotting strategy was adopted. This helped us identify if popular content on YouTube was diverse, and whether the coverage of offline events is similar for all types of events or not. 
             Additionally, within the same main themes, it helped us identify whether specific events caught more attention than others. (e.g. if people are more drawn towards a specific aspect of the mentioned category).
           </p>
-      </div>
+        </div>
     </section><!-- End Timeseries Analysis Section -->
 
     <!-- ======= Discussion Section ======= -->
