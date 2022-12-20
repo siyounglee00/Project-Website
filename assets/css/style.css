@@ -1079,7 +1079,12 @@ div.container_left {
     color: #FFCE44
   }
 
-  object {
+object {
+    max-width: 100%;
+    height: 100%;
+  }
+
+.bruv {
     max-width: 50%;
-    height: auto;
+    height: 100%;
   }
