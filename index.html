@@ -505,109 +505,29 @@
         <div class="section-title">
           <h2>Time Series Analysis</h2>
           <p style="text-align: left;">
-            Sentiment analysis is a text analysis method that detects polarity (e.g. a positive or negative opinion) within the text. 
-            We did a Sentiment analysis on Elon's quotes using VADER, a model used for text sentiment analysis that is sensitive 
-            to polarity (positive/negative) and intensity (strength) of emotion. The analysis returns a sentiment score that is a 
-            value between -1 and 1, where -1 is very negative, 0 is neutral and 1 is very positive.
-            We used VADER to score Elon's quotes to whether his comments are positive or neutral or negative, 
-            which then can be used to see the effect his comments had on the stock price and the popularity of the mentioned company. 
+            After gathering frequent N-grams and the most salient terms, we also analyzed their occurrence throughout time and tried to contrast them to real life events that happened off screen. 
+            Our analysis allowed us address some of the following questions:    
           </p>
-        </div>
 
-        <div style="text-align: center; width: 80%; margin: auto; margin-top: 1em; margin-bottom: 3em;">
-          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-          They have hired people we've fired. We always jokingly call Apple the Tesla graveyard. If you don't make it at Tesla, you go work for Apple.
-          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-        </div>
-        
-        <p style="margin-top: 1em;">
-          This particular quote had a sentiment score of: <b>-0.7003</b>. 
-          This is expected as he mentions Apple negatively in this particular quote. 
-          So now let us take a closer look at how Apple's popularity changed after this quote. 
-          The black vertical line displays the date of the Elon quote. From the figure below, 
-          which uses Google trends, one can think that Elon's quote did not affect the popularity of 
-          search about Apple. But we will make further analysis to prove this hypothesis. We have included 
-          the graph for iPhone as a comparison to the Apple graph to make sure the Apple trend is related to 
-          the technology company and not the fruit. As you can see, there is a minimal increase. 
-          This might actually tell us that Elon does not have that big of an impact on 
-          Apple and we believe that this can be generalized to larger companies as well.
-        </p>
-
-        <div class="row" style="margin-top: -1em;">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <img src="assets/img/ggletrend_quote1.svg" class="img-fluid" alt="">
+          <div style="margin-left: 4em;">
+            - Can YouTube be  actually considered a reliable source of information when it comes to reflecting or reporting  important events  happening around the world?<br>
+            - Is YouTube biased towards a specific region of the world or a specific category of information?<br>
+            - If an event is periodic such as the Olympics, or US elections, does that appear in the content created by YouTubers throughout the years? Can we observe a repetitiveness in the emergence and popularity of such topics?<br>
           </div>
-        </div>
 
-        <p style="margin-top: 1em;">
-          In this example, it did not seem like Elon affected the popularity of Apple when he mentioned them. 
-          It increased a little bit, but not significantly. Now that we have looked at the popularity, 
-          let's take a look at the stock price of Apple. We expect it to drop, as Elon talks badly about Apple. 
-          The figure below shows the development of Apple stock. Once again the black vertical line displays the date 
-          of the Elon quote. We can see that the stock price actually drops, but not significantly. So this is probably not 
-          because of the Elon quote. We could also see that the stock price increased quite a lot the day before, and 
-          therefore it might not be strange that it fell a little bit the day after. 
-          <a href="https://www.tiderpenger.no/" target="_blank">
-          Typically when a stock increases a lot one day, the next day it usually decreases a little bit as some people might sell 
-          due to the increase in price and they want to secure their gain</a>. So the fact that Apple's price dropped a 
-          bit is most likely not because of Elon. This might tell us that Elon does not have that big of an impact on the 
-          stock price of large-cap companies.
-        </p>
-
-        <div class="row" style="margin-top: -2em;">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <img src="assets/img/yfinance_quote1.svg" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div style="margin-top: 4em">
-          <h2>Regression based on sentiment analysis</h2>
           <p style="text-align: left;">
-            Here we wanted to see if there is a significant effect of Musk's quotes on a company's stock price and popularity. 
-            To achieve this, we plotted the percentage change in stock price or percentage change popularity against the sentiment 
-            score. As a first analysis, for all cases, we observe that the data is dispersed and sparse. Doing a regression on this 
-            type of data is difficult because we don't know which model to use. We decided to model the change of stock price 
-            (or popularity) with a linear model with only one feature. The feature used is the score of the sentiment analysis 
-            for each quote. One can also see that when fitting this model, the R-squared of the model is very low. 
-            This implies that the regression model fits the change of stock (or popularity) very badly. 
-            This means that we cannot say that Elon quotes have an effect. We can state that the Elon quotes cannot describe 
-            the change in stock prices (or popularity). This is normal since we only used one feature. This might be not enough 
-            as there are important variables to take into account when we are talking about stock prices (or popularity). 
+            Our Time Series Analysis results are compromised into several interactive plots, with each plot representing a chunk of data corresponding to a specific video theme (e.g.“COVID-19 Vaccine development”). 
+            As a result, we first filtered our youtube video data when it included a list of keywords (e.g. “COVID-19”, “vaccine”, “Fauci” ) associated with the theme either in the description or the title of the video. 
+            Then, within each filtered chunk, we counted the number of videos from that theme by the upload month across our time series (2005-2019), as well as the number of views. 
+            <br></br>
+
+            5 main themes were chosen from the Wikidata which we thought would provide comprehensive and interesting results: <strong>Health, Sport events, Trends, Politics,</strong> and <strong>Technology</strong>. 
+            And under each of these main themes, specific events were chosen to be analyzed.<br></br>
+
+            For each specific event, a plot of the corresponding yearly number of videos uploaded and the number of views was conducted. 
+            And, for each main category the same plotting strategy was adopted. This helped us identify if popular content on YouTube was diverse, and whether the coverage of offline events is similar for all types of events or not. 
+            Additionally, within the same main themes, it helped us identify whether specific events caught more attention than others. (e.g. if people are more drawn towards a specific aspect of the mentioned category).
           </p>
-        </div>
-
-        <div>
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Apple_stock.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Apple_pop.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Ford_stock.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Ford_pop.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Tesla_stock.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Tesla_pop.png" class="img-fluid" alt="">
-            </div>
-          </div>
-                    
-        </div>
-
       </div>
     </section><!-- End Timeseries Analysis Section -->
 
