@@ -427,7 +427,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Word Relevance through Latent Dirichlet Allocation (LDA)</h2>
+          <h2>Word Salience through Latent Dirichlet Allocation (LDA)</h2>
         </div>
 
         <div class="section-title" style="margin-top: 2em;">
@@ -458,7 +458,7 @@
 
             <strong>1.</strong> We first generate a dictionary of words from all the YouTube videos and a list of words with their frequency counts. 
             <br>
-            <strong>2.</strong> We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 25, a number not too large but not too small to get a good spread of possible topics.
+            <strong>2.</strong> We then go through each document (YouTube videos: title + description) and randomly assign each word in the document to one of the <strong>k topics</strong> (k is chosen beforehand). In our case, we chose k = 15, because there are 15 YouTube categories in our dataset.
             <br>
             <strong>3.</strong> Next for each <strong>document <em>d</em></strong>, go through each <strong>word <em>w</em></strong> and compute:
             <br></br>
@@ -507,9 +507,12 @@
           
 
             <div style="margin-left: 4em;">
-              - Can YouTube be  actually considered a reliable source of information when it comes to reflecting or reporting  important events  happening around the world?<br>
-              - Is YouTube biased towards a specific region of the world or a specific category of information?<br>
-              - If an event is periodic such as the Olympics, or US elections, does that appear in the content created by YouTubers throughout the years? Can we observe a repetitiveness in the emergence and popularity of such topics?<br>
+              - Can YouTube be  actually considered a reliable source of information when it comes to reflecting or reporting  important events  happening around the world?
+              <br>
+              - Is YouTube biased towards a specific region of the world or a specific category of information?
+              <br>
+              - If an event is periodic such as the Olympics, or US elections, does that appear in the content created by YouTubers throughout the years? Can we observe a repetitiveness in the emergence and popularity of such topics?
+              <br>
             </div>
           </p>
 
