@@ -489,9 +489,25 @@
       <div class="youtube usage">
         <div id="map1" class="map_containers">
           <!-- Title above map -->
-          <object type="text/html" data="./img/lda.html" width=1100, height=100 class="center_image_3"></object>
+          <object type="text/html" data="./img/lda3.html" width=1100, height=100 class="center_image_3"></object>
         </div>
       </div>
+
+    <section id="lda2" class="about smallerWidthDisplay">
+      <div class="container" data-aos="fade-up">
+        <div>
+          <h2><font size="+2">Salient Groupings Description</font></h2>
+        </div>
+
+        <div>
+          <p style="text-align: left;">
+            After reviewing the results of the LDA Model, we decided to provide a general "topic" look up table for each of the 15 topics.
+            <br></br>
+
+          </p>
+        </div>
+
+    </section><!-- LDA Section -->
 
     
 
@@ -501,21 +517,23 @@
 
         <div class="section-title">
           <h2>Time Series Analysis</h2>
+        </div>
           <p style="text-align: left;">
             After gathering frequent N-grams and the most salient terms, we also analyzed their occurrence throughout time and tried to contrast them to real life events that happened off screen. 
-            Our analysis allowed us address some of the following questions:
-          </p>   
+            Our analysis allowed us address some of the following questions: 
+            <div style="margin-left: 2em;">
+              * Can YouTube be  actually considered a reliable source of information when it comes to reflecting or reporting  important events  happening around the world?
+              <br>
+              * Is YouTube biased towards a specific region of the world or a specific category of information?
+              <br>
+              * If an event is periodic such as the Olympics, or US elections, does that appear in the content created by YouTubers throughout the years? Can we observe a repetitiveness in the emergence and popularity of such topics?
+              <br>
+            </div>
+          </p>  
+        
+      </div>
           
-
-          <div style="margin-left: 4em;">
-            - Can YouTube be  actually considered a reliable source of information when it comes to reflecting or reporting  important events  happening around the world?
-            <br>
-            - Is YouTube biased towards a specific region of the world or a specific category of information?
-            <br>
-            - If an event is periodic such as the Olympics, or US elections, does that appear in the content created by YouTubers throughout the years? Can we observe a repetitiveness in the emergence and popularity of such topics?
-            <br>
-          </div>
-
+      <div>
           <p style="text-align: left;">
             Our Time Series Analysis results are compromised into several interactive plots, with each plot representing a chunk of data corresponding to a specific video theme (e.g.“COVID-19 Vaccine development”). 
             As a result, we first filtered our youtube video data when it included a list of keywords (e.g. “COVID-19”, “vaccine”, “Fauci” ) associated with the theme either in the description or the title of the video. 
