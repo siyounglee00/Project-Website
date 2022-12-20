@@ -354,7 +354,7 @@
           <img src="./img/2016_unigram.png">   
           </div>
           
-          </div>
+        </div>
 
         <div class="section-title" style="margin-top: 2em;">
           <p style="text-align: left;">
@@ -538,254 +538,31 @@
         <div class="section-title">
           <h2>Discussion</h2>
         </div>
+        <p style="text-align: left;">
+          We now present the results and discuss whether they address our questions for the 5 main themes that were explored in our analysis.<br></br>
+        </p>
 
         <div>
-          <h2>Matching</h2>
+          <h2>Health</h2>
+
+          <div class="parent_simon">
+            <div>   
+            <img src="./img/health/Number of videos_Health.html">
+            
+            </div>
+            
+            <div>
+            
+            <img src="./img/health/Total number of views_Health.html">   
+            </div>
+            
+          </div>
 
           <p style="text-align: left;">
             One way to find out whether or not Elon has an impact on the stock price of different companies is to perform an 
             observational study. In an observational study the researcher, in our case us, observe the effect of a risk factor 
             simply by using raw data and not preform a randomized experiment.
             <br></br>
-
-            The idea is to see if Elon's quotes has an effect on the stock price. So in order to find that out, we will observe 
-            the change in stock price of the company that Elon has mentioned, and compare that change to the change in stock price 
-            of other similar companies that was not mentioned by Elon. By doing this for multiple companies and at different dates 
-            we can see if it is an actual Elon Effect or not. The number of different comparisons will increase the probability of 
-            the result being true.
-            <br></br>
-
-            We used <a href="https://pypi.org/project/yfinance/" target="_blank">yfinance<a> a python library that allows you to easily 
-            get information from Yahoo finance, for the financial information in the observational study. 
-            In our case the quoted companies represent the “treated” population of the observational study. 
-            To find a control population, we first select companies that we think are similar to the quoted company 
-            which are not quoted on the same date (and quoted little in general). To perform the matching that will 
-            optimize our model, we decide to introduce covariates for each day that can be observed such as the:
-            <br></br>
-          </p>
-
-          <ul style="text-align: left;">
-            <li>Close, stock price of the company at the end of the day.</li>
-            <li>Volume, how many stock has been exchanged during the day.</li>
-            <li>MarketCap, the value of the company at the end of the day.</li>
-            <li>Popularity, represented by the number of actual search requests made to Google during this day on the company.</li>
-            <li>Money Volume which represents the product of the close and the volume.</li>
-          </ul>
-
-          <p style="text-align: left;">
-            These values are obtained through yahoo finance and google. We also add columns not depending on time: 
-            <br></br>
-          </p>
-
-          <ul style="text-align: left;">
-            <li>Elon: takes value 1 or 0 to indicate if Elon Musk talk about the company.</li>
-            <li>Compare: for the controlled companies, it takes the name of the company we want to compare it with. And for the treated ones, take 'None' as value.</li>
-          </ul>          
-
-          <br></br>
-          <p style="text-align: left;">
-            <b>The following table represents the dataframe obtained and standardized:</b>
-          </p>
-          <br>
-        
-          <div>
-            <table>
-              <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Close</th>
-                <th>Volume</th>
-                <th>MarketCap</th>
-                <th>Popularity</th>
-                <th>Elon</th>
-                <th>Money Volume</th>
-                <th>Propensity score</th>
-              </tr>
-              <tr id="base">
-                <td>Apple</td>
-                <td>2015-02-05</td>
-                <td>-0.077488</td>
-                <td>3.363161</td>
-                <td>-0.020694</td>
-                <td>0.065745</td>
-                <td>1</td>
-                <td>0.013481</td>
-                <td>9.999954e-01</td>
-              </tr>
-              <tr>
-                <td>Microsoft</td>
-                <td>2015-02-05</td>
-                <td>-0.072314</td>
-                <td>0.083692</td>
-                <td>-0.034855</td>
-                <td>-0.147734</td>
-                <td>0</td>
-                <td>-0.059075</td>
-                <td>5.085224e-01</td>
-              </tr>
-              <tr>
-                <td>Dell</td>
-                <td>2015-02-05</td>
-                <td>-0.084971</td>
-                <td>-0.719630</td>
-                <td>-0.058121</td>
-                <td>-0.527252</td>
-                <td>0</td>
-                <td>-0.086382</td>
-                <td>9.863380e-02</td>
-              </tr>
-              <tr>
-                <td>IBM</td>
-                <td>2015-02-05</td>
-                <td>-0.036986</td>
-                <td>-0.646309</td>
-                <td>-0.050319</td>
-                <td>-0.788171</td>
-                <td>0</td>
-                <td>-0.078658</td>
-                <td>1.205988e-07</td>
-              </tr>
-              <tr>
-                <td>Samsung</td>
-                <td>2015-02-05</td>
-                <td>0.041447</td>
-                <td>-0.538745</td>
-                <td>0.074025</td>
-                <td>1.488939</td>
-                <td>0</td>
-                <td>-0.041529</td>
-                <td>3.341405e-08</td>
-              </tr>
-            </table>
-          </div>
-
-          <br></br>
-          <p style="text-align: left;">
-            Thanks to these covariates, the propensity score is computed for each company at each given day. 
-            Now, we can compute the matching between the controlled and the treated companies. 
-            To do so, a bipartite graph is constructed with edges between the controlled and treated companies 
-            that we wish to compare, and weights equal to the similarity of these two companies. We solve the 
-            maximum bipartite matching to gain pairs. 
-            <br><br>
-            Here you can see the representation of the graph:
-          </p>
-
-          <div class="col-lg-12" style="width: 60%; margin: auto; margin-bottom: 2em;">
-            <img src="assets/img/graph.png" class="img-fluid" alt="">
-          </div>
-            
-          <p style="text-align: left;">
-            The matching is then obtained and we can now go to the next step which 
-            consists of comparing the change of the stock of the treated vs control.
-            <br><br>
-          </p>
-        </div>
-
-
-        <div style="margin-top: 1em;">
-          <h2>Tests on observational study</h2>
-          <p style="text-align: left;">
-            To do the observational study we had to be careful about a couple of more things. 
-            For example the financial data was sometimes listed in other currencies than USD. 
-            The most prominent is Samsung in Korean Won which is about 1000x of USD. We then had to 
-            convert all monetary features of these types of companies to USD.
-            <br><br>
-
-            This was done manually for the few companies in question, and by taking an estimated average of the 
-            exchange rate over the time period for our data.
-            <br><br>
-
-            We then redid the propensity score for this part and got the coefficients as follows:
-            <br><br>
-
-            <b>Intercept</b> <span id="tab">-1.0469</span><br>
-            <b>Money volume</b> <span id="tab">8.3449</span><br>
-            <b>MarketCap</b> <span id="tab">-2.1203</span><br>
-            <b>Popularity</b> <span id="tab">0.2211</span><br>
-            
-            <br><br>
-            Based on the outputted propensity scores we did the matching for each local group of stocks.
-
-            <br><br>
-            The next part was modeling the stock price change. We loaded in all the stock data for the companies 
-            we have in our model and looked at the 5 consecutive days after a quote for the matched company and the 
-            analysed company. Sometimes a quote will be during a weekend or the following span will include days 
-            without stock history, then our model will automatically just take the days that have stock history. 
-            We then use the stock prices to calculate the daily change (previous day price/next day price).
-            
-            <br><br>
-            By comparing the distributions between a matched and control stock we can test if they have a similar distribution. 
-            We used a Mann-Whitley u test for the distributions. The null-hypothesis is that the distributions are the same. 
-            Here you can see the daily change for the control and 'treated' companies where the x axis is the dates in 
-            chronological order, but not to scale as well as the results for the Mann Whitley U tests:
-          </p>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Apple</h3>
-            <p><b>P-value (IBM)</b> <span id="tab">0.7818969961187895</span></p>
-            <p><b>P-value (Samsung)</b> <span id="tab">0.07267412867689323</span></p>
-            <p><b>P-value (Lenovo)</b> <span id="tab">0.20719648581932448</span></p>
-            <p><b>P-value (Microsoft)</b> <span id="tab">0.9309874465595671</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalApple.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Ford</h3>
-            <p><b>P-value (Renault)</b> <span id="tab">0.037136256414410235</span></p>
-            <p><b>P-value (General Motors)</b> <span id="tab">0.5285921958576796</span></p>
-            <br><br><br>
-            <p>
-              There is two empty figures because Toyota and Stellantis was not matched with ford. 
-              This might have been due to a large market cap and low trading volume.
-            </p>            
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalFord.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>PayPal</h3>
-            <p><b>P-value (Western Union)</b> <span id="tab">0.26275304114766074</span></p>
-            <p><b>P-value (Euronet)</b> <span id="tab">0.48073111045562256</span></p>
-            <p><b>P-value (American Express)</b> <span id="tab">0.9009714934164412</span></p>
-            <p><b>P-value (Visa)</b> <span id="tab">0.534965034965035</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalPayPal.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Tesla</h3>
-            <p><b>P-value (Daimler)</b> <span id="tab">0.22820421433941152</span></p>
-            <p><b>P-value (BMW)</b> <span id="tab">0.01735656673757902</span></p>
-            <p><b>P-value (Volkswagen)</b> <span id="tab">0.46236044154701805</span></p>
-            <p><b>P-value (General Motors)</b> <span id="tab">0.907735912135226</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalTesla.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Twitter</h3>
-            <p><b>P-value (Google)</b> <span id="tab">0.48484848484848486</span></p>
-            <p><b>P-value (Facebook)</b> <span id="tab">0.5468909935184665</span></p>
-            <p><b>P-value (Snapchat)</b> <span id="tab">0.19477620553450214</span></p>
-            <p><b>P-value (Pinterest)</b> <span id="tab">0.1681531290926782</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalTwitter.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <p style="text-align: left;">
-            <br><br>  
-            There seem to be two tests with a significant result. The P-value in the Ford test with Renault is under 0.05 
-            which means that we can reject that they come from the same distribution. The same applies to Tesla and BMW. 
-            However, it's hard to conclude that Elon's quotes have a significant impact on the 'treated' companies. 
-            That is because not all the hypotheses were rejected, and it can also be the case that different companies' 
-            stocks move in different ways.
-          </p>
 
         </div>
 
