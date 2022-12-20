@@ -1061,13 +1061,13 @@ section {
 
 .left_image {
   width: 45vw;
-  height: auto;
+  height: 35vh;
   float: left;
 }
 
 .right_image {
   width: 45vw;
-  height: auto;
+  height: 35vh;
   float: right;
 }
 div.container_left {
