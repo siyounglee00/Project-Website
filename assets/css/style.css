@@ -1058,6 +1058,18 @@ section {
   width: 90vw;
   height: 100vh;
 }
+
+.left_image {
+  width: 45vw;
+  height: 100vh;
+  float: left;
+}
+
+.right_image {
+  width: 45vw;
+  height: 100vh;
+  float: right;
+}
 div.container_left {
   text-align: center;
 }
